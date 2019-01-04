@@ -1,11 +1,11 @@
 var lastupdate = 0;
 
 function formatTime(time)
-{   
+{
     return dateFormat(new Date(parseInt(time)*1000), "mmm dS, yyyy, h:MM TT");
 };
 
-function click(name) 
+function click(name)
 {
     $.ajax({
         url:"clk",
@@ -34,7 +34,7 @@ $.ajax({
 });
 
 function poll(){
-    $.ajax({ 
+    $.ajax({
         url: "upd",
         data: {'lastupdate': lastupdate },
         success: function(response, status) {
@@ -57,10 +57,10 @@ function poll(){
             setTimeout('poll();', 10000);
         },
         //complete: poll,
-        dataType: "json", 
+        dataType: "json",
         timeout: 30000
         });
 };
 
 $(document).live('pageinit', poll);
-   
+
