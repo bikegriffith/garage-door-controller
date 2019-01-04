@@ -45,7 +45,7 @@ class Door(object):
         gpio.output(self.relay_pin, True)
         
     def get_state(self):
-        if gpio.input(self.state_pin) == 0:
+        if gpio.input(self.state_pin) == 1:
             return 'closed'
         elif self.last_action == 'open':
             if time.time() - self.last_action_time >= self.time_to_open:
