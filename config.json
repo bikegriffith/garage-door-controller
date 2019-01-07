@@ -1,6 +1,6 @@
 {
     "config": {
-        "use_auth": true,
+        "use_auth": false,
         "use_alerts": false,
         "use_openhab": false
     },

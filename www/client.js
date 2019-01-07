@@ -21,14 +21,14 @@ $.ajax({
             var name = data[i][1];
             var state = data[i][2];
             var time = data[i][3];
-            var li = '<li id="' + id + '" data-icon="false">';
+            var li = '<li id="' + id + '" class="door door-' + state + '" data-icon="false">';
             li = li + '<a href="javascript:click(\'' + id + '\');">';
-            li = li + '<img src="img/'+state + '.png" />';
             li = li + '<h3 style="text-transform:capitalize">Currently ' + state + '</h3>';
-            li = li + '<p style="text-transform:capitalize">' + name + '. Last Updated <span class="time">' + formatTime(time) + '</span></p>';
+            li = li + '<img src="img/'+state + '.png" />';
+            li = li + '<p style="text-transform:capitalize"><!--' + name + '. -->Updated <span class="time">' + formatTime(time) + '</span></p>';
             li = li + '</a></li>';
             $("#doorlist").append(li);
-            $("#doorlist").listview('refresh');
+            //$("#doorlist").listview('refresh');
         }
     }
 });
@@ -46,7 +46,7 @@ function poll(){
                 $("#" + id + " h3").html('Currently ' + state);
                 $("#" + id + " .time").html(formatTime(time));
                 $("#" + id  + " img").attr("src", "img/" + state + ".png")
-                $("#doorlist").listview('refresh');
+                //$("#doorlist").listview('refresh');
             }
             //$("#Left_Door p").html(JSON.stringify(response.update));
             setTimeout('poll()', 1000);
