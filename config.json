@@ -1,49 +1,29 @@
 {
-"config":
-{
-	"use_auth":false,
-	"use_alerts":false,
-	"use_openhab":false
-},
-"alerts":
-{
-	"time_to_wait" : 10,
-	"alert_type" : "<smtp OR pushbullet",
-	"smtp":
-		{
-		"smtphost" : "<SMTP HOST>",
-		"smtpport" : 587,
-		"smtp_tls" : "True",
-		"username" : "<USERNAME EMAIL ADDRESS>",
-		"password" : "<PASSWORD>",
-		"to_email" : "<TO EMAIL ADDRESS>"
-		},
-	"pushbullet":
-		{
-		"access_token":"<PUSHBULLET ACCESS TOKEN>"
-		}
-},
-"openhab" :
-{
-	"server" : "<SERVER_IP_ADDRESS>",
-	"port" : "<OPENHAB_SERVER_PORT>"
-},
-"site" :
-	{
-	"port":80,
-	"username":"user",
-	"password":"12345"
-	},
-"doors" : 
-	{
-		"right" : 
-			{
-			"name" : "Main Garage Door",
-			"relay_pin" : 23,
-			"state_pin" : 17,
-			"approx_time_to_close" : 10,
-			"approx_time_to_open" : 13,
-			"openhab_name" : "g_door_right"
-			}
-	}
+    "config": {
+        "use_auth": true,
+        "use_alerts": false,
+        "use_openhab": false
+    },
+    "alerts": {
+        "time_to_wait": 10,
+        "alert_type": null,
+        "smtp": {},
+        "pushbullet": {}
+    },
+    "openhab" : {},
+    "site": {
+        "port": 80,
+        "username": "user",
+        "password": "pass"
+    },
+    "doors": {
+        "right": {
+            "name": "Main Garage Door",
+            "relay_pin": 23,
+            "state_pin": 17,
+            "approx_time_to_close": 10,
+            "approx_time_to_open": 13,
+            "openhab_name": "g_door_right"
+        }
+    }
 }
