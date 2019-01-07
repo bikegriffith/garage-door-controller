@@ -59,7 +59,11 @@ function poll(){
         //complete: poll,
         dataType: "json",
         timeout: 30000
-        });
+    });
+
+    // Reset camera images as well
+    $('#cam-dim').attr('src', '/cam-dim.jpg?cb='+Math.random());
+    $('#cam-bright').attr('src', '/cam-bright.jpg?cb='+Math.random());
 };
 
 $(document).live('pageinit', poll);

@@ -44,6 +44,13 @@
     border-radius: 50%;
     box-shadow: inset 0px 8px 48px #ddd;
 }
+.door a:hover,
+.door a:focus,
+.door a:active {
+    text-decoration: none;
+    background: #f5f5f5;
+}
+
 .door:before {
     content: "";
     display: block;
@@ -60,8 +67,10 @@
     /* status label */
     margin-top: 0;
     font-size: 16pt;
+    margin-bottom: 35px;
     position: relative;
     top: -55px;
+    pointer-events: none;
 }
 .door p {
     /* last updated time */
